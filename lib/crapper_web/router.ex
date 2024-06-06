@@ -21,7 +21,8 @@ defmodule CrapperWeb.Router do
     pipe_through :browser
 
     get "/", PageController, :home
-    resources "/posts", PostController
+    # resources "/posts", PostController
+    get "/posts", PostController, :index
   end
 
   # Other scopes may use custom stacks.
@@ -64,6 +65,8 @@ defmodule CrapperWeb.Router do
 
   scope "/", CrapperWeb do
     pipe_through [:browser, :require_authenticated_user]
+
+    resources "/posts", PostController
 
     live_session :require_authenticated_user,
       on_mount: [{CrapperWeb.UserAuth, :ensure_authenticated}] do

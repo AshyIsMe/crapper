@@ -6,7 +6,7 @@ defmodule Crapper.Repo.Migrations.CreatePosts do
       add :post, :string
       add :views, :integer
       add :likes, :integer
-      add :user_id, references(:User, on_delete: :nothing)
+      add :user_id, references(:users, on_delete: :nothing)
 
       timestamps(type: :utc_datetime)
     end

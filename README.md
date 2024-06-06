@@ -35,7 +35,7 @@ mix deps.get
 mix ecto.migrate
 
 # Add posts
-mix phx.gen.html Posts Post posts user_id:references:User post:string views:integer likes:integer
+mix phx.gen.html Posts Post posts user_id:references:users post:string views:integer likes:integer
 mix ecto.migrate
 # Modify router.ex to include /posts
 

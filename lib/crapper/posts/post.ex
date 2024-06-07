@@ -16,5 +16,6 @@ defmodule Crapper.Posts.Post do
     post
     |> cast(attrs, [:post, :views, :likes])
     |> validate_required([:post, :views, :likes])
+    |> validate_length(:post, max: 280)
   end
 end
